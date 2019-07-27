@@ -31,6 +31,8 @@ public class ProductAddServlet extends HttpServlet {
         String productPrice = req.getParameter("productPrice");
         Product product = new Product(productName, productDescription, Long.valueOf(productPrice));
         productService.addProduct(product);
-        resp.sendRedirect("/onlineshop");
+     resp.sendRedirect("/onlineshop/products");
+        //req.getRequestDispatcher("products.jsp").forward(req, resp);
+
     }
 }
