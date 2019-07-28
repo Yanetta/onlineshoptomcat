@@ -1,17 +1,29 @@
 package model;
 
+import utils.UserIdGen;
+
 public class User {
     private Long id;
     private String email;
     private String password;
+    private String role;
 
-    public User(Long id, String email, String password) {
-        this.id = id;
+    public User(String email, String password, String role) {
+        this.id = UserIdGen.createID();
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public User() {
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public Long getId() {
@@ -44,6 +56,7 @@ public class User {
                 "id=" + id +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }

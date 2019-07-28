@@ -23,19 +23,15 @@ public class UserRegistrationSrevlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         String repeatPassword = req.getParameter("repeatPassword");
+        String userRole = req.getParameter("setUserRole");
         User user = null;
         if (password.equals(repeatPassword)) {
-            user = new User(1L, email, password);
+            user = new User(email, password, userRole );
             userService.addUser(user);
             resp.sendRedirect("/onlineshop/users");
         } else{
             req.setAttribute("error", "Your passwords are not equals");
             req.getRequestDispatcher("register.jsp").forward(req, resp);
-
         }
-
-
-
     }
-
 }

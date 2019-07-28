@@ -20,6 +20,5 @@ public class AllProductsServlet extends HttpServlet {
             List<Product> allProducts = productService.getAllProducts();
             req.setAttribute("allProducts", allProducts);
             req.getRequestDispatcher("products.jsp").forward(req, resp);
-
         }
 }

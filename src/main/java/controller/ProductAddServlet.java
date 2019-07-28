@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 @WebServlet(value = "/addproduct")
 public class ProductAddServlet extends HttpServlet {
     private static final ProductService productService = ProductServiceFactory.getProductServiceInstance();
@@ -31,7 +32,7 @@ public class ProductAddServlet extends HttpServlet {
         String productPrice = req.getParameter("productPrice");
         Product product = new Product(productName, productDescription, Long.valueOf(productPrice));
         productService.addProduct(product);
-     resp.sendRedirect("/onlineshop/products");
+        resp.sendRedirect("/onlineshop/products");
         //req.getRequestDispatcher("products.jsp").forward(req, resp);
 
     }

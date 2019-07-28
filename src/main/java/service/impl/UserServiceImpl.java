@@ -6,6 +6,7 @@ import model.User;
 import service.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class UserServiceImpl implements UserService {
     private static final UserDao userDao = new UserDaoImpl();
@@ -16,5 +17,15 @@ public class UserServiceImpl implements UserService {
 
     public List<User> getAll() {
         return userDao.getAll();
+    }
+
+    @Override
+    public Optional<User> findUserByEmail(String email) {
+        return userDao.findUserByEmail(email);
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+        userDao.deleteUser(id);
     }
 }
