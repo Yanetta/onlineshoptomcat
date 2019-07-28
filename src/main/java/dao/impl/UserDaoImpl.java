@@ -11,7 +11,10 @@ import java.util.Optional;
 
 public class UserDaoImpl implements UserDao {
     private static final Logger logger = Logger.getLogger(UserDaoImpl.class);
-    List<User> userList = new ArrayList<User>();
+    private static List<User> userList = new ArrayList<User>();
+    static {
+        userList.add(new User("admin@gmail.com", "admin","admin"));
+    }
 
     public void addUser(User user) {
         userList.add(user);

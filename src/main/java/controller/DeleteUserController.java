@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/deleteuser")
+@WebServlet("/admin/deleteuser")
 public class DeleteUserController extends HttpServlet {
     UserService userService = UserServiceFactory.getUserService();
 
@@ -22,7 +22,7 @@ public class DeleteUserController extends HttpServlet {
         Long id = Long.valueOf(req.getParameter("deleteuser"));
         userService.deleteUser(id);
 
-        resp.sendRedirect("/onlineshop/users");
+        resp.sendRedirect("/onlineshop/admin/users");
         // req.getRequestDispatcher("/users.jsp").forward(req, resp);
     }
 }

@@ -15,7 +15,7 @@ public class UserRegistrationSrevlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("register.jsp").forward(req, resp);
+        req.getRequestDispatcher("/register.jsp").forward(req, resp);
     }
 
     @Override
@@ -28,10 +28,10 @@ public class UserRegistrationSrevlet extends HttpServlet {
         if (password.equals(repeatPassword)) {
             user = new User(email, password, userRole );
             userService.addUser(user);
-            resp.sendRedirect("/onlineshop/users");
+            resp.sendRedirect("/onlineshop/admin/users");
         } else{
             req.setAttribute("error", "Your passwords are not equals");
-            req.getRequestDispatcher("register.jsp").forward(req, resp);
+            req.getRequestDispatcher("/register.jsp").forward(req, resp);
         }
     }
 }

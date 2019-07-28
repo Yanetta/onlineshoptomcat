@@ -24,15 +24,25 @@ public class SignInController extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         Optional<User> optUser = userService.findUserByEmail(email);
-        if (optUser.isPresent() && optUser.get().getPassword().equals(password)) {
-            HttpSession session = req.getSession();
-            session.setAttribute("user", optUser.get());
-            resp.sendRedirect("/onlineshop/users");
+        HttpSession session = req.getSession();
 
-        } else {
+        if (optUser.isPresent() && optUser.get().getPassword().equals(password)) {
+            session.setAttribute("user", optUser.get());
+        }
+//        such user doesnt exist, your login and password are incorrect
+        else {
             req.getRequestDispatcher("/index.jsp").forward(req, resp);
         }
+        if (optUser.get().getRole().equals("admin")) {
+            resp.sendRedirect("/onlineshop/admin/users");
+
+        } else {
+            resp.sendRedirect("/onlineshop/products");
+        }
+//            req.getRequestDispatcher("/index.jsp").forward(req, resp);
+        //req.getRequestDispatcher("/accessDenied.jsp").forward(req, resp);
     }
 }
+
 
 
