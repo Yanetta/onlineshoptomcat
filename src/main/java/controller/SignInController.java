@@ -39,8 +39,6 @@ public class SignInController extends HttpServlet {
         } else {
             resp.sendRedirect("/onlineshop/products");
         }
-//            req.getRequestDispatcher("/index.jsp").forward(req, resp);
-        //req.getRequestDispatcher("/accessDenied.jsp").forward(req, resp);
     }
 }
 

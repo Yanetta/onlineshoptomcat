@@ -6,7 +6,6 @@ import dao.impl.ProductDaoImpl;
 public class ProductDaoFactory {
     private ProductDaoFactory() {
     }
-
     private static ProductDao instance;
     public static synchronized ProductDao getProductDao(){
         if (instance == null){

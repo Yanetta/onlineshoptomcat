@@ -14,7 +14,6 @@ public class ProductDaoImpl implements ProductDao {
     public void addProduct(Product product) {
         productList.add(product);
         logger.info("User" + product + "added in db");
-
     }
 
     public List<Product> getAllProducts() {

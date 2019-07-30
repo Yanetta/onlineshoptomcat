@@ -6,8 +6,7 @@ public class UserIdGen {
 
     private static AtomicLong idCounter = new AtomicLong();
 
-    public static Long createID()
-    {
+    public static Long createID() {
         return idCounter.getAndIncrement();
     }
 }

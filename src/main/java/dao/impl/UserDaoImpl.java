@@ -12,8 +12,9 @@ import java.util.Optional;
 public class UserDaoImpl implements UserDao {
     private static final Logger logger = Logger.getLogger(UserDaoImpl.class);
     private static List<User> userList = new ArrayList<User>();
+
     static {
-        userList.add(new User("admin@gmail.com", "admin","admin"));
+        userList.add(new User("admin@gmail.com", "admin", "admin"));
     }
 
     public void addUser(User user) {
@@ -39,7 +40,6 @@ public class UserDaoImpl implements UserDao {
 
         } else {
             logger.info("User with Id " + id + "does not exist in db");
-
         }
     }
 }

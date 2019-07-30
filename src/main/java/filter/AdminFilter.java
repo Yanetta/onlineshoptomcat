@@ -21,7 +21,6 @@ public class AdminFilter implements Filter {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
             httpServletRequest.getRequestDispatcher("/accessDenied.jsp").forward(httpServletRequest, httpServletResponse);
-            //httpServletResponse.sendRedirect("index.jsp");
         }
     }
 }
