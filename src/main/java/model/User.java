@@ -1,6 +1,6 @@
 package model;
 
-import utils.UserIdGen;
+import utils.UserIdGeneration;
 
 public class User {
     private Long id;
@@ -9,7 +9,7 @@ public class User {
     private String role;
 
     public User(String email, String password, String role) {
-        this.id = UserIdGen.createID();
+        this.id = UserIdGeneration.createID();
         this.email = email;
         this.password = password;
         this.role = role;

@@ -3,8 +3,6 @@ package dao.impl;
 import dao.UserDao;
 import model.User;
 import org.apache.log4j.Logger;
-//import org.apache.log4j.Logger;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

@@ -24,9 +24,8 @@ public class UserRegistrationSrevlet extends HttpServlet {
         String password = req.getParameter("password");
         String repeatPassword = req.getParameter("repeatPassword");
         String userRole = req.getParameter("setUserRole");
-        User user = null;
         if (password.equals(repeatPassword)) {
-            user = new User(email, password, userRole );
+            User user = new User(email, password, userRole );
             userService.addUser(user);
             resp.sendRedirect("/onlineshop/admin/users");
         } else{

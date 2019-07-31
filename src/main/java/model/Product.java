@@ -1,7 +1,9 @@
 package model;
 
+import java.math.BigDecimal;
+
 public class Product {
-    private long id;
+    private Long id;
     private String name;
     private String description;
     private long price;

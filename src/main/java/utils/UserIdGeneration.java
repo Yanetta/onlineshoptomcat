@@ -2,7 +2,7 @@ package utils;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-public class UserIdGen {
+public class UserIdGeneration {
 
     private static AtomicLong idCounter = new AtomicLong();
 
