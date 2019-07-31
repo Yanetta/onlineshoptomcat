@@ -16,10 +16,13 @@ import java.util.Optional;
 
 @WebServlet("/signin")
 public class SignInController extends HttpServlet {
-    private static final UserService userService = UserServiceFactory.getUserService();
+
+    private static final UserService userService =
+            UserServiceFactory.getUserService();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
 
         String email = req.getParameter("email");
         String password = req.getParameter("password");

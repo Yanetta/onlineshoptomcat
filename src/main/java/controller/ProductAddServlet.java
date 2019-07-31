@@ -18,15 +18,19 @@ import java.util.List;
 
 @WebServlet(value = "/addproduct")
 public class ProductAddServlet extends HttpServlet {
-    private static final ProductService productService = ProductServiceFactory.getProductServiceInstance();
+
+    private static final ProductService productService =
+            ProductServiceFactory.getProductServiceInstance();
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         req.getRequestDispatcher("addproduct.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String productName = req.getParameter("productName");
         String productDescription = req.getParameter("productDescription");
         String productPrice = req.getParameter("productPrice");

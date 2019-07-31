@@ -2,6 +2,7 @@ package service.impl;
 
 import dao.UserDao;
 import dao.impl.UserDaoImpl;
+import factory.UserDaoFactory;
 import model.User;
 import service.UserService;
 
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserServiceImpl implements UserService {
-    private static final UserDao userDao = new UserDaoImpl();
+    private static final UserDao userDao = UserDaoFactory.getUserDao();
 
     public void addUser(User user) {
         userDao.addUser(user);

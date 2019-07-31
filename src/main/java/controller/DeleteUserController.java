@@ -14,10 +14,12 @@ import java.io.PrintWriter;
 
 @WebServlet("/admin/deleteuser")
 public class DeleteUserController extends HttpServlet {
-    UserService userService = UserServiceFactory.getUserService();
+
+    private static final UserService userService = UserServiceFactory.getUserService();
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
 
         Long id = Long.valueOf(req.getParameter("deleteuser"));
         userService.deleteUser(id);
