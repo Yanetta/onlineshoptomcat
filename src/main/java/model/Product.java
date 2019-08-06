@@ -14,6 +14,10 @@ public class Product {
         this.price = price;
     }
 
+    public Product(String name) {
+        this.name = name;
+    }
+
     public Product() {
     }
 

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Code {
     private String code;
     private User user;
@@ -7,6 +9,9 @@ public class Code {
     public Code(String code, User user) {
         this.code = code;
         this.user = user;
+    }
+
+    public Code() {
     }
 
     public String getCode() {
@@ -23,5 +28,27 @@ public class Code {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Code{" +
+                "code='" + code + '\'' +
+                ", user=" + user +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Code code1 = (Code) o;
+        return Objects.equals(code, code1.code) &&
+                Objects.equals(user, code1.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code, user);
     }
 }
