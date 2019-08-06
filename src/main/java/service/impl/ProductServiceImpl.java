@@ -8,6 +8,7 @@ import model.Product;
 import service.ProductService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class ProductServiceImpl implements ProductService {
 
@@ -21,5 +22,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getAllProducts() {
         return productDao.getAllProducts();
+    }
+
+    @Override
+    public Optional<Product> getProductByName(String name) {
+      return productDao.getProductByName(name);
     }
 }

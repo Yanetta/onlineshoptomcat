@@ -47,8 +47,8 @@
     <a href="addproduct">Add product</a>
 </div>
 
-<%--<div align="center">--%>
-<%--    <a href="admin/users">Users</a>--%>
-<%--</div>--%>
+<div align="center">
+    <a href="/onlineshop/chooseproducts">Choose products</a>
+</div>
 </body>
 </html>
